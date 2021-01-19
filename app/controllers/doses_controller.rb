@@ -11,7 +11,8 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     # @ingredient = Ingredient.find_by_name(params[:dose][:ingredient])
     # @dose.ingredient = @ingredient
-    # I am not yet checking whether it's a valid ingredient
+    # This was not necessary. I am passing the ingredient_id in the params,
+    # coming from the form.
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
