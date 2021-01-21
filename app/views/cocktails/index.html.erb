@@ -7,10 +7,7 @@
   <% c.doses.each do |dose| %>
     <p><%= dose.description %> of <%= dose.ingredient.name %></p>
   <% end %>
+  <% if c.photo.attached? %>
+    <%= cl_image_tag c.photo.key, width: 50, crop: :fit %>
+  <% end %>
 <% end %>
-<%= cl_image_tag("lzbnshokpk3nhjdufsbr",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("iusyor7dlfwhnntv4oa2",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
